@@ -1,0 +1,26 @@
+<div class="row"  *ngIf="showMsg">
+  <div class="col-xs-12">
+    <p class="alert alert-success">
+        <strong>Item is saved!</strong>
+
+    </p>
+  </div>
+</div>
+<div class="col-sm-6 my-auto">
+  <h1>Please Give Input for an Item</h1>
+<form #login="ngForm" (ngSubmit)="saveItem(login)">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" placeholder="Name" [(ngModel)]="item.name" name="name">
+
+      <label for="price">Price</label>
+      <input type="number" class="form-control" id="price" placeholder="Price" name="price" [(ngModel)]="item.price">
+
+      <label for="description">Description</label>
+      <input type="text" class="form-control" id="description" placeholder="Description" name="description" [(ngModel)]="item.description">
+
+      <button type="submit" class="btn btn-success" (click)="createItem()">Save</button>
+    </div>
+    
+  </form>
+</div>

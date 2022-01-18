@@ -1,0 +1,42 @@
+
+<div class="row"  *ngIf="showMsg">
+    <div class="col-xs-12">
+      <p class="alert alert-success">
+          <strong>Registration Success!</strong> Please click here to login!.
+
+      </p>
+    </div>
+  </div>
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>Item Name</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+          <td>
+                {{item.id}}
+          </td>
+          <td>
+              {{item.name}}
+          </td>
+          <td>$
+              {{item.price}}
+          </td>
+          <td>
+              {{item.description}}
+          </td>
+          <td><a routerLink="/edit-item/{{item.id}}"><input type="button" class="btn btn-secondary" value="Edit" (click)="editItem(item)"></a></td>
+          <td><input type="button" class="btn btn-danger" value="Delete" (click)="deleteItem(item)"></td>
+          <app-edit-item *ngIf="editItem(item)"></app-edit-item>
+      </tr>
+    </tbody>
+    
+  </table>
+  <div class="d-flex justify-content-center"><button type="button" class="btn btn-dark" (click)="fileDownload()">Download as CSV</button></div>
