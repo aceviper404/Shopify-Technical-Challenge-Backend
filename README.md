@@ -4,7 +4,6 @@ Prerequisite Software to run:
 1. Latest MS VSCode
 2. Spring Tool Suite
 3. MySQL WorkBench
-4. 
 ----------
 **Please Have your MySQL WorkBench set up.
 
